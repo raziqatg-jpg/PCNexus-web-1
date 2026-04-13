@@ -1,0 +1,471 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --first-color: hsl(4, 82%, 54%);
+  --first-color-alt: hsl(4, 78%, 50%);
+  --hover-color: hsl(0, 0%, 95%);
+  --title-color: hsl(0, 0%, 12%);
+  --text-color: hsl(0, 0%, 40%);
+  --white-color: hsl(0, 0%, 100%);
+  --border-color: hsl(0, 0%, 72%);
+  --body-color: hsl(0, 0%, 100%);
+
+  --body-font: "Montserrat", sans-serif;
+  --second-font: "Unbounded", sans-serif;
+
+  --bigger-font-size: 1.5rem;
+  --normal-font-size: .95rem;
+  --small-font-size: .85rem;
+
+  --font-regular: 400;
+  --font-semi-bold: 600;
+}
+
+/*=============== BASE RESET ===============*/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--body-font);
+  background: var(--body-color);
+  color: var(--text-color);
+}
+
+input, button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+a { text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/*=============== ALERT ===============*/
+.alert {
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+}
+.alert-danger {
+  background: hsl(4, 82%, 95%);
+  color: hsl(4, 82%, 40%);
+  border: 1px solid hsl(4, 82%, 80%);
+}
+.alert-success {
+  background: hsl(140, 60%, 95%);
+  color: hsl(140, 60%, 30%);
+  border: 1px solid hsl(140, 60%, 70%);
+}
+.alert-warning {
+  background: hsl(45, 100%, 95%);
+  color: hsl(45, 80%, 30%);
+  border: 1px solid hsl(45, 80%, 75%);
+}
+
+/* ========================================================= */
+/*   MOBILE LAYOUT (default)                                 */
+/* ========================================================= */
+
+.login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: var(--body-color);
+}
+
+.login__container {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Swiper HIDDEN di mobile */
+.login__swiper {
+  display: none !important;
+}
+
+.login__area {
+  width: 100%;
+}
+
+/*=============== LOGIN DATA ===============*/
+.login__data {
+  text-align: center;
+  color: var(--title-color);
+  margin-bottom: 1.5rem;
+}
+
+.login__title {
+  font-family: var(--second-font);
+  font-size: var(--bigger-font-size);
+  font-weight: 700;
+  margin-bottom: .6rem;
+  line-height: 1.3;
+  color: var(--title-color);
+}
+
+.login__description {
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  margin-bottom: 1.25rem;
+}
+
+/*=============== BUTTONS ===============*/
+.login__button,
+.login__button-border {
+  width: 100%;
+  padding: .9rem 1rem;
+  border-radius: .6rem;
+  cursor: pointer;
+  transition: background .3s;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.login__button {
+  background: var(--first-color);
+  color: var(--white-color);
+  display: block;
+  text-align: center;
+}
+.login__button:hover { background: var(--first-color-alt); }
+
+.login__button-border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  background: var(--white-color);
+  border: 2px solid var(--border-color);
+  color: var(--title-color);
+}
+.login__button-border:hover { background: var(--hover-color); }
+.login__button-border i { font-size: 1.2rem; color: #db4437; }
+
+/*=============== OR LINE ===============*/
+.login__line {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 1.5rem auto;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  width: fit-content;
+  padding: 0 .5rem;
+}
+.login__line::before,
+.login__line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 100px;
+  height: 1px;
+  background: var(--border-color);
+}
+.login__line::before { right: calc(100% + .25rem); }
+.login__line::after  { left:  calc(100% + .25rem); }
+
+/*=============== FORM ===============*/
+.login__form { width: 100%; }
+
+.login__content {
+  display: grid;
+  gap: .65rem;
+  margin-bottom: .65rem;
+}
+
+.login__box { position: relative; }
+
+.login__input {
+  width: 100%;
+  border: 2px solid var(--border-color);
+  padding: .85rem 3rem .85rem 1.25rem;
+  border-radius: .5rem;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  background: var(--white-color);
+  transition: border-color .3s;
+}
+.login__input::placeholder {
+  color: var(--border-color);
+  font-weight: var(--font-regular);
+}
+.login__input:focus { border-color: var(--title-color); }
+
+.login__box i {
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color .3s;
+}
+.login__box i:hover { color: var(--title-color); }
+
+.login__forgot {
+  display: block;
+  text-align: right;
+  margin-bottom: 1.25rem;
+  font-size: var(--small-font-size);
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+}
+.login__forgot:hover { color: var(--first-color-alt); }
+
+.login__switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .35rem;
+  font-size: var(--small-font-size);
+  margin-top: 1.25rem;
+  color: var(--text-color);
+}
+.login__sign {
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+}
+.login__sign:hover { color: var(--first-color-alt); }
+
+/*=============== UPLOAD FOTO ===============*/
+.form-group {
+  margin-top: .65rem;
+  margin-bottom: .65rem;
+}
+
+.upload-box {
+  display: block;
+  width: 100%;
+  background: #fafafa;
+  border: 2px dashed var(--border-color);
+  border-radius: .5rem;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background .3s, border-color .3s;
+}
+.upload-box:hover {
+  background: var(--hover-color);
+  border-color: var(--title-color);
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-color);
+}
+.upload-icon { font-size: 24px; }
+.upload-text { font-weight: var(--font-semi-bold); font-size: var(--small-font-size); }
+.upload-content small { font-size: .75rem; color: var(--border-color); }
+
+/* ========================================================= */
+/*   DESKTOP LAYOUT — min-width: 1150px                      */
+/*   IDENTIK dengan BLogin                                   */
+/* ========================================================= */
+
+@media screen and (min-width: 1150px) {
+
+  .login {
+    padding: 2rem;
+    background: hsl(0, 0%, 90%);
+    /* Sama persis dengan BLogin */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 2 kolom: kiri swiper, kanan form — IDENTIK BLogin */
+  .login__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 900px;
+    max-width: calc(100vw - 4rem);
+    margin: 0 auto; /* ← INI YANG BIKIN CENTERED, KURANG DI VERSI LAMA */
+    height: auto;
+    min-height: 580px;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 24px 64px hsla(0, 0%, 0%, .2);
+    background: #111;
+  }
+
+  /* ── SWIPER (kiri) ── */
+  .login__swiper {
+    display: block !important;
+    position: relative;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 580px;
+    min-width: 0;
+    overflow: hidden;
+    --swiper-theme-color: #fff;
+    --swiper-pagination-bullet-inactive-color: rgba(255,255,255,.45);
+    --swiper-pagination-bullet-inactive-opacity: 1;
+  }
+
+  .login__swiper .swiper-wrapper {
+    height: 100% !important;
+  }
+  .login__swiper .swiper-slide {
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Gradient overlay */
+  .login__swiper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      hsla(0,0%,0%,.6) 0%,
+      hsla(0,0%,0%,.0) 40%,
+      hsla(0,0%,0%,.0) 60%,
+      hsla(0,0%,0%,.65) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Gambar swiper menyesuaikan tinggi container */
+  .login__swiper-img,
+  .daftar__swiper-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .login__swiper-data {
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+    right: 2.5rem;
+    color: #fff;
+    z-index: 10;
+  }
+
+  .login__swiper-subtitle,
+  .login__swiper-subtitel {
+    font-size: .73rem;
+    font-weight: var(--font-semi-bold);
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    opacity: .85;
+    margin-bottom: .5rem;
+    color: #fff;
+  }
+
+  .login__swiper-title {
+    font-family: var(--second-font);
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #fff;
+  }
+
+  .login__swiper-social {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 2.5rem;
+    color: #fff;
+    z-index: 10;
+  }
+
+  .login__swiper-links {
+    display: flex;
+    gap: .75rem;
+    margin-top: .5rem;
+  }
+
+  .login__swiper-link {
+    color: #fff;
+    font-size: 1.35rem;
+    opacity: .8;
+    transition: opacity .3s, transform .3s;
+  }
+  .login__swiper-link:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
+  .login__swiper .swiper-pagination { z-index: 10; }
+
+  /* ── FORM AREA (kanan) ── */
+  .login__area {
+    min-width: 0;
+    /* 
+      Daftar punya form lebih panjang, pakai scroll kalau perlu
+      tapi tetap center kalau konten cukup pendek 
+    */
+    background: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 2.75rem;
+    overflow-y: auto;
+  }
+
+  .login__area::-webkit-scrollbar { width: 4px; }
+  .login__area::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+  }
+
+  .login__data { margin-bottom: 0; }
+
+  /* Samain ukuran title dengan BLogin */
+  .login__title {
+    font-size: 1.25rem;
+    margin-bottom: .4rem;
+    /* Paksa tidak line break di 2 baris kalau muat */
+    word-break: keep-all;
+  }
+
+  .login__description { margin-bottom: .75rem; }
+
+  /* Field lebih compact di desktop supaya muat */
+  .login__input {
+    padding: .75rem 3rem .75rem 1.25rem;
+  }
+
+  .login__button,
+  .login__button-border {
+    padding: .8rem 1rem;
+  }
+
+  .login__content { gap: .55rem; margin-bottom: .55rem; }
+  .form-group { margin-top: .55rem; margin-bottom: .55rem; }
+}
+
+/*=============== TABLET ===============*/
+@media screen and (min-width: 600px) and (max-width: 1149px) {
+  .login__container {
+    max-width: 480px;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 12px 40px hsla(0, 0%, 0%, .1);
+    background: var(--white-color);
+  }
+}

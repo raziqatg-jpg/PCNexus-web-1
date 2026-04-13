@@ -1,0 +1,898 @@
+/* ═══════════════════════════════════════════
+   PROFIL.CSS — PCNexus Profile Page
+   Digunakan khusus untuk halaman profil.php
+═══════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&display=swap');
+
+/* ─── Variables tambahan ─── */
+:root {
+  --pro-accent:   #7b3fe4;
+  --pro-accent2:  #06b6d4;
+  --pro-soft:     #f0e9ff;
+  --pro-radius:   20px;
+  --pro-shadow:   0 4px 24px rgba(123,63,228,0.10);
+}
+
+/* ═══════════════════════════════════════════
+   PROFILE HERO SECTION
+═══════════════════════════════════════════ */
+
+.profile-hero {
+  max-width: 900px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+}
+
+/* ─── Banner ─── */
+.banner-wrap {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border-radius: var(--pro-radius) var(--pro-radius) 0 0;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.banner-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #0e7490 100%);
+  position: relative;
+}
+
+.banner-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.btn-edit-banner {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15,23,42,0.55);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  transition: background 0.2s;
+}
+
+.btn-edit-banner:hover {
+  background: rgba(15,23,42,0.78);
+}
+
+/* ─── Identity Row ─── */
+.profile-identity {
+  background: #fff;
+  border-left: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+  padding: 0 24px 20px;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* Avatar */
+.avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+  margin-top: -48px;
+}
+
+.avatar-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+  display: block;
+  background: #e2e8f0;
+}
+
+.btn-edit-avatar {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--pro-accent);
+  border: 2px solid #fff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.btn-edit-avatar:hover {
+  background: #6a34c9;
+}
+
+/* Nama & Bio */
+.identity-info {
+  flex: 1;
+  padding-top: 16px;
+  min-width: 0;
+}
+
+.identity-name {
+  font-family: 'Clash Display', 'Space Grotesk', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.seller-badge-profil {
+  background: linear-gradient(135deg, #7b3fe4, #a855f7);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.identity-bio {
+  font-size: 0.85rem;
+  color: #475569;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.identity-meta {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Tombol Edit Profil & Daftar Penjual */
+.btn-edit-profil,
+.btn-register-seller {
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 16px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  transition: all 0.18s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-edit-profil {
+  border: 1.5px solid #e2e8f0;
+  background: #fff;
+  color: #475569;
+}
+
+.btn-edit-profil:hover {
+  background: var(--pro-soft);
+  border-color: var(--pro-accent);
+  color: var(--pro-accent);
+}
+
+.btn-register-seller {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  border: none;
+  color: #fff;
+}
+
+.btn-register-seller:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245,158,11,0.3);
+}
+
+/* ─── Stat Bar ─── */
+.stat-bar {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-top: none;
+  border-radius: 0 0 var(--pro-radius) var(--pro-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 0;
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.stat-num {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 32px;
+  background: #e2e8f0;
+}
+
+/* ═══════════════════════════════════════════
+   PROFILE BODY SECTION
+═══════════════════════════════════════════ */
+
+.profile-body {
+  max-width: 900px;
+  margin: 28px auto 60px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.profile-section {
+  background: #fff;
+  border-radius: var(--pro-radius);
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+  box-shadow: var(--pro-shadow);
+}
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.section-title {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.link-lihat-semua {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--pro-accent);
+  text-decoration: none;
+}
+
+.link-lihat-semua:hover {
+  text-decoration: underline;
+}
+
+.btn-tambah-alamat {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--pro-accent);
+  background: var(--pro-soft);
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  transition: background 0.18s;
+}
+
+.btn-tambah-alamat:hover {
+  background: #ddd6fe;
+}
+
+/* ─── Order Cards ─── */
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.order-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #f1f5f9;
+  background: #fafafe;
+  transition: all 0.18s;
+}
+
+.order-card:hover {
+  border-color: #c4b5fd;
+  box-shadow: 0 2px 12px rgba(123,63,228,0.08);
+}
+
+.order-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.order-icon--selesai {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.order-icon--dikirim {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.order-icon--diproses {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.order-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.order-produk {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+
+.order-meta {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.order-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.order-harga {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0f172a;
+  font-family: 'Clash Display', sans-serif;
+}
+
+.order-status {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  text-transform: capitalize;
+}
+
+.order-status--selesai {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.order-status--dikirim {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.order-status--diproses {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+/* ─── Alamat Grid ─── */
+.alamat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.alamat-card {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 18px;
+  position: relative;
+  transition: border-color 0.18s;
+}
+
+.alamat-card:hover {
+  border-color: #c4b5fd;
+}
+
+.alamat-card--utama {
+  border-color: var(--pro-accent);
+  background: var(--pro-soft);
+}
+
+.badge-utama {
+  display: inline-block;
+  background: var(--pro-accent);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.alamat-label-row {
+  margin-bottom: 8px;
+}
+
+.alamat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 2px 9px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.alamat-card--utama .alamat-label {
+  background: #ddd6fe;
+  color: var(--pro-accent);
+}
+
+.alamat-nama {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.alamat-hp {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.alamat-detail {
+  font-size: 0.78rem;
+  color: #475569;
+  margin-bottom: 2px;
+}
+
+.alamat-kota {
+  font-size: 0.78rem;
+  color: #475569;
+  margin-bottom: 14px;
+}
+
+.alamat-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-alamat-edit,
+.btn-alamat-utama {
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 5px 12px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  cursor: pointer;
+  color: #475569;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  transition: all 0.18s;
+}
+
+.btn-alamat-edit:hover {
+  background: #f1f5f9;
+}
+
+.btn-alamat-utama {
+  border-color: var(--pro-accent);
+  color: var(--pro-accent);
+  background: var(--pro-soft);
+}
+
+.btn-alamat-utama:hover {
+  background: #ddd6fe;
+}
+
+/* ═══════════════════════════════════════════
+   MODAL EDIT PROFIL (TIDAK BENTROK DENGAN GLOBAL)
+═══════════════════════════════════════════ */
+
+.profile-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.profile-modal-overlay.active {
+  display: flex;
+}
+
+.profile-modal-wrap {
+  width: 100%;
+  max-width: 480px;
+}
+
+.profile-edit-modal {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.profile-modal-title {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Clash Display', sans-serif;
+  color: #0f172a;
+}
+
+.profile-modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #94a3b8;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.profile-modal-close:hover {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.profile-modal-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Banner Preview */
+.profile-banner-preview {
+  height: 100px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.profile-banner-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.profile-banner-preview:hover .profile-banner-overlay {
+  opacity: 1;
+}
+
+.profile-placeholder-text {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Avatar Row */
+.profile-avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-avatar-wrap {
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.profile-avatar-wrap .profile-avatar-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.profile-avatar-wrap:hover .profile-avatar-overlay {
+  opacity: 1;
+}
+
+/* Form Fields */
+.profile-field-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.profile-field-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.profile-field-input:focus {
+  border-color: var(--pro-accent);
+  box-shadow: 0 0 0 3px rgba(123,63,228,0.1);
+}
+
+.profile-field-hint {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+/* Modal Footer */
+.profile-modal-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.profile-btn-cancel {
+  background: none;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s;
+}
+
+.profile-btn-cancel:hover {
+  background: #f8fafc;
+}
+
+.profile-btn-save {
+  background: var(--pro-accent);
+  border: none;
+  border-radius: 10px;
+  padding: 8px 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s;
+}
+
+.profile-btn-save:hover {
+  background: #6a34c9;
+  transform: translateY(-1px);
+}
+
+/* Hidden File Input */
+.profile-hidden-input {
+  display: none;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE DESIGN
+═══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .profile-hero {
+    margin: 12px auto 0;
+    padding: 0 12px;
+  }
+
+  .banner-wrap {
+    height: 160px;
+  }
+
+  .profile-identity {
+    padding: 0 16px 16px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .avatar-wrap {
+    margin-top: -40px;
+  }
+
+  .avatar-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .identity-info {
+    text-align: center;
+  }
+
+  .identity-name {
+    font-size: 1.2rem;
+    justify-content: center;
+  }
+
+  .btn-edit-profil,
+  .btn-register-seller {
+    align-self: center;
+  }
+
+  .stat-bar {
+    padding: 10px 0;
+  }
+
+  .stat-num {
+    font-size: 1.1rem;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+  }
+
+  .profile-body {
+    margin: 20px auto 40px;
+    padding: 0 12px;
+    gap: 20px;
+  }
+
+  .profile-section {
+    padding: 18px;
+  }
+
+  .section-title {
+    font-size: 0.9rem;
+  }
+
+  .order-card {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .order-right {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .alamat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-modal-wrap {
+    margin: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-wrap {
+    height: 130px;
+  }
+
+  .avatar-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .btn-edit-profil,
+  .btn-register-seller {
+    padding: 6px 14px;
+    font-size: 0.75rem;
+  }
+
+  .stat-item {
+    gap: 0;
+  }
+
+  .order-produk {
+    font-size: 0.8rem;
+  }
+
+  .order-harga {
+    font-size: 0.8rem;
+  }
+}
